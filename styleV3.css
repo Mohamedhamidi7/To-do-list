@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --bg-0 : hsl(0, 0%, 97%);
+    --bg-1 : hsl(0, 0%, 93%);
+    --bg-2 : hsl(0, 0%, 88%);
+    --text-3 : hsl(226, 15%, 50%);
+    --text-2 : hsl(226, 15%, 30%);
+    --text-1 : hsl(226, 15%, 12%);
+    --accent : hsl(291, 100%, 60%);
+    --accent-1 : hsl(291, 100%, 40%);
+    --accent-n : hsl(0, 100%, 60%);
+    --overlay : hsla(293, 85%, 24%, 0.193);
+}
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg-0 : hsl(0, 0%, 5%);
+        --bg-1 : hsl(0, 0%, 10%);
+        --bg-2 : hsl(0, 0%, 17%);
+        --text-3 : hsl(226, 15%, 40%);
+        --text-2 : hsl(226, 15%, 60%);
+        --text-1 : hsl(226, 15%, 88%);
+        --accent : hsl(291, 100%, 60%);
+        --accent-1 : hsl(291, 100%, 40%);
+        --accent-n : hsl(0, 100%, 60%);
+    }
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3{
+    color: var(--text-1);
+}
+p{
+    color: var(--text-3);
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+input,
+textarea,
+select,
+option{
+    background:var(--bg-0);
+    color: var(--text-1);
+    border: none;
+    border-radius: 5px;
+    outline: 0px solid var(--accent-1);
+    padding: 5px;
+    transition: outline 300ms ;
+}
+input:focus,
+textarea:focus,
+select:focus{
+    outline: 2px solid var(--accent-1);
+}
+input::placeholder,
+textarea::placeholder,
+select{
+    color: var(--text-3);
+    font-family: "outfit";
+    transition: color 300ms ;
+
+}
+input:focus::placeholder{
+    color: transparent;
+}
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+	background-color: var(--bg-2);
+    font-size: 1.5em;
+    border-radius: 5px;
+    right: -10px;
+    transition: background-color 300ms ease, border-radius 300ms ease;
+}
+input[type="datetime-local"]:focus::-webkit-calendar-picker-indicator {
+	
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+    color: var(--text-1);
+    width: 100%;
+}
+ul li i{
+    width: 1.5em;
+    position: relative;
+    top: 1px;
+}
+ul li button{
+    float: right;
+}
+time{
+    font-size: 1em;
+    text-align: end;
+}
+body{
+    background-color: var(--bg-0);
+    width: 100vw;
+    height: 100vh;
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-1);
+}
+main{
+    width: 80vw;
+    max-height: 70vh;
+    display: grid;
+    column-gap: 15px;
+    row-gap: 30px;
+    grid-template-columns:  repeat(4, 1fr);
+     /* For The Heading */
+    grid-template-rows: 2em auto;
+}
+.container form{
+    margin-right: 15px;
+}
+.mainTitle{
+    grid-column: 1 / span 4;
+}
+.container{
+    background-color: var(--bg-1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0 15px 15px ;
+}
+.cntRight{
+    grid-column: 2 / span 3;
+}
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+.secondaryBtn{
+    font-size: 1.2rem;
+    color: var(--text-3);
+}
+.secondaryBtn:hover{
+    color: var(--accent);
+}
+.addingBtn{
+    color: var(--accent);
+    position: relative;
+    top:0.1em;
+    font-size: 1.5rem;
+}
+.addingBtn:hover{
+    color: var(--accent-1);
+}
+.settingBtn{
+    position: relative;
+}
+.closingBtn{
+    position: relative;
+    top: -0.5em;
+    right: 0em;
+}
+.submitBtn{
+    background-color: var(--bg-2);
+    color: var(--accent);
+    outline: 2px solid var(--accent-1);
+    width: 30%;
+    border-radius: 10px;
+    padding: 5px 20px;
+    align-self: center;
+    font-weight:700;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+.submitBtn:hover{
+    background-color: var(--accent-1);
+    color: var(--bg-0);
+}
+nav{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.containerTasks{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.oneTask{
+    border-radius: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.btnsTask{
+    flex-grow: 1;
+}
+article{
+    background-color: var(--bg-2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    flex-grow: 2;
+}
+/* Scrolling Controll */
+.scroll{
+    overflow-y:scroll;
+    max-height: 50vh;
+}
+.scroll::-webkit-scrollbar {
+    width: 15px;
+}
+.scroll::-webkit-scrollbar-track{
+    background: none;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background: var(--bg-2);
+    border-radius: 10px;
+}
+/* In the next Part i will create the popups */
+.overlay{
+    /* display: flex; */
+    display: none;
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--overlay);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    z-index: 2;
+}
+.colorInput{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.colorPicker{
+    padding: 0;
+
+}
+.boxForm{
+    /* display: flex; */
+    display: none;
+    min-width: 300px;
+    flex-direction: column;
+    gap: 15px;
+}
+@media (max-width: 500px) {
+    body{
+    background-color: var(--bg-0);
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: start;
+    color: var(--text-1);
+    }
+    main{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    flex-direction: column;
+    }
+    .mainTitle{
+        text-align: center;
+        margin-top: 15px;
+    }
+    .overlay{
+        position: fixed;
+    } 
+}

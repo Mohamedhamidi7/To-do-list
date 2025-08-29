@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleV3.css">
+    <link rel="stylesheet" href="/To-do/fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="shortcut icon" href="/To-do/favicone.webp" type="image/x-icon">
+    <title>To-do</title>
+    <script src="scriptV3.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1 class="mainTitle">My To-do-list<span style="color: var(--accent)">.</span></h1>
+        <div class="container cntLeft">
+            <div class="containerHeader">
+                <h2>Categories</h2>
+                <button class="popBox addingBtn" value="cat">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <nav class="scroll">
+                <ul>
+                    <li><i class="fa-solid fa-box-archive"></i>All</li>
+                    <li><i class="fa-solid fa-heart"></i>Favorites</li>
+                    <li><i class="fa-solid fa-calendar-day"></i>Today</li>
+                    <li><i class="fa-solid fa-calendar-week"></i>This Week</li>
+                    <li><i class="fa-solid fa-calendar"></i>This Mounth</li>
+                </ul>
+                <ul id="categoriesDisplay">
+                    <li>
+                        <!-- <i class="fa-solid fa-hashtag"></i>Example
+                        <button class="settingBtn secondaryBtn"><i class="fa-solid fa-ellipsis"></i></button> -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container cntRight">
+            <div class="containerHeader">
+                <h2>My Tasks</h2>
+                <button class="popBox addingBtn" value="tas">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <div id="tasksDisplay" class="containerTasks scroll" >
+                <!-- <section class="oneTask" >
+                <article>
+                    <time>12/12/2012 12:23</time>
+                    <h3>This is a Task</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quasi eum deserunt molestiae saepe porro? Accusantium aperiam ipsa rem veritatis, sunt quod, perspiciatis ullam, nemo ad molestias eaque illum repellat!
+                    </p>
+                    <ul>
+                        <li><i class="fa-solid fa-hashtag"></i>Gym</li>
+                    </ul>
+                </article>
+                <div>
+                    <button class="settingBtn secondaryBtn">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+                </section> -->
+            </div>
+        </div>
+    </main>
+    <section id="settingBox" class="overlay">
+        <div class="container">
+            <div class="containerHeader">
+                <h2 id="settingBoxName">BoxName</h2>
+                <button  id="closeBox" class="closingBtn secondaryBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="categoriesSettings" class="boxForm">
+                <input type="text" name="name" id="categoryName" placeholder="Name (ex. Gym, School...)" required>
+                <div class="colorInput">
+                    <label for="categorieColor">Color: </label>
+                    <input id="categoryColor"type="color" name="categorycolor" class="colorPicker" value="#e033ff" > 
+                </div>
+                <button id="submitCategoriesSettingsBtn" type="submit" class="submitBtn"  form="categoriesSettings">
+                SUBMIT
+                </button>
+            </form>
+            <form id="tasksSettings" class="boxForm">
+                <input id="taskTitle" class="" type="text" name="name" placeholder="Enter a title" required>
+                <textarea id="taskDescription" placeholder="Enter the description" name="description" value=""></textarea>
+                <input id="taskDate" type="datetime-local" max="2100-12-25T23:59" required>
+                <select id="taskCategory" aria-placeholder="Choose a Category" name="Category" required>
+                    <option value="">Select a category</option>
+                    <div id="categoriesInput">
+                        
+                    </div>
+                </select>
+                <button class="submitBtn" type="submit" form="tasksSettings">
+                SUBMIT
+                </button>
+            </form>
+            <div id="errorMSG" class="boxForm">
+                <p>
+                    Please add a category first
+                </p>
+            </div>
+        </div>
+        
+    </section>
+</body>
